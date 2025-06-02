@@ -20,6 +20,9 @@ public class BookingController(BookingService bookingService) : Controller
     [HttpPost("create")]
     public async Task<IActionResult> CreateBooking([FromBody] BookingEntity booking)
     {
+
+
+
         if (booking == null)
         {
             return BadRequest("Invalid booking data.");
@@ -49,6 +52,7 @@ public class BookingController(BookingService bookingService) : Controller
             return NotFound("No bookings found for this user.");
         }
         return Ok(bookings);
+
     }
 
     [HttpGet("all")]
@@ -61,4 +65,10 @@ public class BookingController(BookingService bookingService) : Controller
         }
         return Ok(bookings);
     }
+
+
+
+
 }
+
+

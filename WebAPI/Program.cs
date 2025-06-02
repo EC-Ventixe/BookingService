@@ -4,6 +4,11 @@ using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
+builder.Services.AddHttpClient();
+
+
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
