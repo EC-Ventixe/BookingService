@@ -18,7 +18,7 @@ public class BookingService(DataContext context, HttpClient httpClient)
             Quantity = ticketQuantity
         };
 
-        var reservationResponse = await _httpClient.PutAsJsonAsync($"https://localhost:7138/api/ticket/updateticket/{eventId}", amount);
+        var reservationResponse = await _httpClient.PutAsJsonAsync($"https://ventixeticketserviceapp.azurewebsites.net/api/ticket/updateticket/{eventId}", amount);
 
 
         var booking = new Data.Entities.BookingEntity
